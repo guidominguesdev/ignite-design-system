@@ -1,12 +1,14 @@
 import {
+  borderWidths,
   colors,
   fonts,
   fontSizes,
   fontWeights,
   lineHeights,
+  opacity,
   radii,
   space,
-} from '@ignite-ui/tokens'
+} from '@nexty-ui/tokens'
 import { createStitches, defaultThemeMap } from '@stitches/react'
 
 export const {
@@ -23,14 +25,17 @@ export const {
     ...defaultThemeMap,
     width: 'space',
     height: 'space',
+    opacity: 'opacity',
   },
 
   theme: {
+    borderWidths,
     colors,
     fontSizes,
     fontWeights,
     fonts,
     lineHeights,
+    opacity,
     radii,
     space,
   },

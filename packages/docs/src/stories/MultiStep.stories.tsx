@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Box, MultiStep, MultiStepProps } from '@ignite-ui/react'
+import { Box, MultiStep, MultiStepProps, Button } from '@nexty-ui/react'
 
 export default {
   title: 'Form/Multi Step',
@@ -16,6 +16,7 @@ export default {
           css={{ display: 'flex', flexDirection: 'column', gap: '$2' }}
         >
           {Story()}
+          <Button as="a">Testando</Button>
         </Box>
       )
     },

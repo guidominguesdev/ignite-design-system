@@ -1,38 +1,66 @@
 import type { StoryObj, Meta } from '@storybook/react'
-import { Button, ButtonProps } from '@ignite-ui/react'
-import { ArrowRight } from 'phosphor-react'
+import { Button, ButtonProps } from '@nexty-ui/react'
+
+import { ChatCenteredText, Eye } from 'phosphor-react'
+
+const iconArgType = {
+  options: ['noIcon', 'ChatCenteredText', 'Eye'],
+  mapping: {
+    noIcon: null,
+    ChatCenteredText: <ChatCenteredText size={16} weight="bold" />,
+    Eye: <Eye size={16} weight="bold" />,
+  },
+  control: {
+    type: 'select',
+    labels: {
+      noIcon: 'No icon',
+    },
+  },
+}
 
 export default {
   title: 'Form/Button',
   component: Button,
   args: {
-    children: 'Send',
+    children: 'Label',
     variant: 'primary',
     size: 'md',
+    full: false,
     disabled: false,
+    loading: false,
   },
   argTypes: {
     variant: {
       options: ['primary', 'secondary', 'tertiary'],
-      control: {
-        type: 'inline-radio',
-      },
+      control: { type: 'inline-radio' },
     },
     size: {
       options: ['sm', 'md'],
-      control: {
-        type: 'inline-radio',
-      },
+      control: { type: 'inline-radio' },
     },
-    disabled: {
-      control: {
-        type: 'boolean',
-      },
-    },
-    onClick: {
-      action: 'click',
-    },
+    full: { control: { type: 'boolean' } },
+    disabled: { control: { type: 'boolean' } },
+    loading: { control: { type: 'boolean' } },
+    leftIcon: iconArgType,
+    rightIcon: iconArgType,
   },
+  decorators: [
+    (Story) => {
+      return (
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            width: '100%',
+            height: '100%',
+          }}
+        >
+          {Story()}
+        </div>
+      )
+    },
+  ],
 } as Meta<ButtonProps>
 
 export const Primary: StoryObj<ButtonProps> = {}
@@ -40,36 +68,23 @@ export const Primary: StoryObj<ButtonProps> = {}
 export const Secondary: StoryObj<ButtonProps> = {
   args: {
     variant: 'secondary',
-    children: 'Create new',
   },
 }
 
 export const Tertiary: StoryObj<ButtonProps> = {
   args: {
     variant: 'tertiary',
-    children: 'Cancel',
   },
 }
 
-export const Small: StoryObj<ButtonProps> = {
+export const Full: StoryObj<ButtonProps> = {
   args: {
-    size: 'sm',
+    full: true,
   },
 }
 
-export const WithIcon: StoryObj<ButtonProps> = {
+export const Loading: StoryObj<ButtonProps> = {
   args: {
-    children: (
-      <>
-        Next step
-        <ArrowRight weight="bold" />
-      </>
-    ),
-  },
-}
-
-export const Disabled: StoryObj<ButtonProps> = {
-  args: {
-    disabled: true,
+    loading: true,
   },
 }

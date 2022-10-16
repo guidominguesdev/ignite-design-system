@@ -1,13 +1,29 @@
 import type { StoryObj, Meta } from '@storybook/react'
-import { Text, TextProps } from '@ignite-ui/react'
+import { Box, Text, TextProps } from '@nexty-ui/react'
 
 export default {
   title: 'Typography/Text',
   component: Text,
   size: 'md',
+  decorators: [
+    (Story) => {
+      return (
+        <Box
+          css={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            maxWidth: 512,
+          }}
+        >
+          {Story()}
+        </Box>
+      )
+    },
+  ],
   args: {
     children:
-      'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi, doloribus. Fugit tempora sunt, illum inventore aperiam, esse eius ex, accusantium hic commodi adipisci. Explicabo totam mollitia cumque ex ad repellendus.',
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget mi eu justo imperdiet congue id eu orci. Cras vehicula nunc eu mi efficitur porta. Sed porta velit et luctus tempor.',
   },
   argTypes: {
     size: {
@@ -34,10 +50,3 @@ export default {
 } as Meta<TextProps>
 
 export const Primary: StoryObj<TextProps> = {}
-
-export const CustomTag: StoryObj<TextProps> = {
-  args: {
-    children: 'Strong text',
-    as: 'strong',
-  },
-}
