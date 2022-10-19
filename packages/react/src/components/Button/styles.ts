@@ -1,13 +1,15 @@
-import { styled } from '../../styles'
+import { styled } from 'styles'
 
 export const ButtonLabel = styled('span', {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  gap: '$2',
   svg: {
     width: '$4',
     height: '$4',
+  },
+  '* + *': {
+    marginLeft: '$3',
   },
 })
 
@@ -18,13 +20,12 @@ export const Button = styled('button', {
   justifyContent: 'center',
   position: 'relative',
   borderRadius: '$sm',
-  fontSize: '$sm',
   fontWeight: '$medium',
   fontFamily: '$default',
   textAlign: 'center',
   boxSizing: 'border-box',
-  padding: '0 $4',
   cursor: 'pointer',
+  transition: 'background $transitions$fast ease 0s',
   '&:disabled': {
     cursor: 'not-allowed',
   },
@@ -34,22 +35,20 @@ export const Button = styled('button', {
         color: '$white',
         backgroundColor: '$nexty500',
         '&:disabled': {
-          backgroundColor: '$gray200',
+          opacity: '$medium',
         },
         '&:not(:disabled):hover': {
           backgroundColor: '$nexty300',
         },
       },
       secondary: {
-        color: '$nexty300',
-        border: '2px solid $nexty500',
+        color: '$white',
+        backgroundColor: '$gray700',
         '&:disabled': {
-          color: '$gray200',
-          borderColor: '$gray200',
+          opacity: '$medium',
         },
         '&:not(:disabled):hover': {
-          backgroundColor: '$nexty500',
-          color: '$white',
+          backgroundColor: '$gray600',
         },
       },
       tertiary: {
@@ -58,16 +57,23 @@ export const Button = styled('button', {
           color: '$gray600',
         },
         '&:not(:disabled):hover': {
+          backgroundColor: '$gray700',
           color: '$white',
         },
       },
     },
     size: {
       sm: {
-        height: '$8',
+        fontSize: '$sm',
+        padding: '$3 $4',
       },
       md: {
-        height: '$10',
+        fontSize: '$md',
+        padding: '$4 $5',
+      },
+      lg: {
+        fontSize: '$md',
+        padding: '$5 $7',
       },
     },
     full: {

@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Box, MultiStep, MultiStepProps, Button } from '@nexty-ui/react'
+import { Box, MultiStep, MultiStepProps } from '@nexty-ui/react'
 
 export default {
-  title: 'Form/Multi Step',
+  title: 'Form/MultiStep',
   component: MultiStep,
   args: {
     size: 4,
@@ -13,10 +13,14 @@ export default {
       return (
         <Box
           as="label"
-          css={{ display: 'flex', flexDirection: 'column', gap: '$2' }}
+          css={{
+            all: 'unset',
+            width: '$80',
+            display: 'flex',
+            flexDirection: 'column',
+          }}
         >
           {Story()}
-          <Button as="a">Testando</Button>
         </Box>
       )
     },

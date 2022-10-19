@@ -16,11 +16,13 @@ module.exports = {
   "features": {
     "storyStoreV7": true
   },
-  viteFinal: (config, { configType }) => {
-    if (configType === 'PRODUCTION') {
-      config.base = '/nexty-ui/'
-    }
+  "previewHead": (head) => (`
+    ${head}
+    <style>
+      html, body, #root {
+        height: 100%;
+      }
+    </style>
+  `),
 
-    return config
-  }
 }

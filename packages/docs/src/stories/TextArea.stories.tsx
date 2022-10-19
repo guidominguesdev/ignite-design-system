@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Box, Text, TextArea, TextAreaProps } from '@nexty-ui/react'
 
 export default {
-  title: 'Form/Text Area',
+  title: 'Form/TextArea',
   component: TextArea,
   args: {},
   decorators: [
@@ -10,7 +10,12 @@ export default {
       return (
         <Box
           as="label"
-          css={{ display: 'flex', flexDirection: 'column', gap: '$2' }}
+          css={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '$2',
+            width: '$80',
+          }}
         >
           <Text size="sm">Observations</Text>
           {Story()}

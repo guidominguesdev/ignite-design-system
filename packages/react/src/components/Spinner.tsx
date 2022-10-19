@@ -1,5 +1,4 @@
-import { ComponentProps, ElementType } from 'react'
-import { keyframes, styled } from '../styles'
+import { keyframes, styled } from 'styles'
 
 export const Rotate360 = keyframes({
   '0%': { transform: 'rotate(0deg)' },
@@ -7,12 +6,9 @@ export const Rotate360 = keyframes({
 })
 
 export const Spinner = styled('span', {
-  $$size: '$space$4',
-  $$baseColor: '$colors$gray100',
+  $$baseColor: '$colors$white',
   $$borderWidth: '$borderWidths$thick',
 
-  width: '$$size',
-  height: '$$size',
   display: 'block',
   position: 'relative',
   boxSizing: 'border-box',
@@ -25,22 +21,42 @@ export const Spinner = styled('span', {
     width: '100%',
     height: '100%',
     borderRadius: '$full',
-    borderRightColor: 'transparent',
     borderWidth: '$$borderWidth',
     borderStyle: 'solid',
+    animation: `0.6s linear 0s infinite normal none running ${Rotate360}`,
+  },
+  '&::before': {
+    borderColor: '$$baseColor transparent $$baseColor $$baseColor',
   },
   '&::after': {
-    borderTopColor: 'transparent',
-    borderBottomColor: 'transparent',
-    borderLeftColor: 'transparent',
-    borderRightColor: '$$baseColor',
+    borderColor: 'transparent $$baseColor transparent transparent',
     opacity: '$medium',
   },
-  animation: `0.6s linear 0s infinite normal none running ${Rotate360}`,
+  variants: {
+    size: {
+      sm: {
+        width: '$3',
+        height: '$3',
+      },
+      md: {
+        width: '$4',
+        height: '$4',
+      },
+      lg: {
+        $$borderWidth: '3px',
+        width: '$6',
+        height: '$6',
+      },
+      xl: {
+        $$borderWidth: '3px',
+        width: '$8',
+        height: '$8',
+      },
+    },
+  },
+  defaultVariants: {
+    size: 'md',
+  },
 })
-
-export interface SpinnerProps extends ComponentProps<typeof Spinner> {
-  as?: ElementType
-}
 
 Spinner.displayName = 'Spinner'

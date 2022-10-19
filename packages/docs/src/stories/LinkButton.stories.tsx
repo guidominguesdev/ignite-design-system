@@ -1,5 +1,5 @@
 import type { StoryObj, Meta } from '@storybook/react'
-import { Button, ButtonProps } from '@nexty-ui/react'
+import { LinkButton, LinkButtonProps } from '@nexty-ui/react'
 
 import { DiscordLogo, SnapchatLogo } from 'phosphor-react'
 
@@ -19,15 +19,13 @@ const iconArgType = {
 }
 
 export default {
-  title: 'Form/Button',
-  component: Button,
+  title: 'Form/LinkButton',
+  component: LinkButton,
   args: {
-    children: 'Lorem ipsum',
+    children: 'Label',
     variant: 'primary',
-    size: 'md',
-    full: false,
+    size: 'sm',
     disabled: false,
-    loading: false,
   },
   argTypes: {
     variant: {
@@ -35,39 +33,13 @@ export default {
       control: { type: 'inline-radio' },
     },
     size: {
-      options: ['sm', 'md', 'lg'],
+      options: ['sm', 'md'],
       control: { type: 'inline-radio' },
     },
-    full: { control: { type: 'boolean' } },
     disabled: { control: { type: 'boolean' } },
-    loading: { control: { type: 'boolean' } },
     leftIcon: iconArgType,
     rightIcon: iconArgType,
   },
-} as Meta<ButtonProps>
+} as Meta<LinkButtonProps>
 
-export const Primary: StoryObj<ButtonProps> = {}
-
-export const Secondary: StoryObj<ButtonProps> = {
-  args: {
-    variant: 'secondary',
-  },
-}
-
-export const Tertiary: StoryObj<ButtonProps> = {
-  args: {
-    variant: 'tertiary',
-  },
-}
-
-export const Full: StoryObj<ButtonProps> = {
-  args: {
-    full: true,
-  },
-}
-
-export const Loading: StoryObj<ButtonProps> = {
-  args: {
-    loading: true,
-  },
-}
+export const Primary: StoryObj<LinkButtonProps> = {}

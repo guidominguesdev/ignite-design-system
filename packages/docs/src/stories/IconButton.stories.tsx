@@ -1,35 +1,32 @@
 import type { StoryObj, Meta } from '@storybook/react'
-import { Button, ButtonProps } from '@nexty-ui/react'
+import { IconButton, IconButtonProps } from '@nexty-ui/react'
 
-import { DiscordLogo, SnapchatLogo } from 'phosphor-react'
+import { Plus, DiscordLogo, SnapchatLogo } from 'phosphor-react'
 
 const iconArgType = {
-  options: ['noIcon', 'DiscordLogo', 'SnapchatLogo'],
+  options: ['Plus', 'DiscordLogo', 'SnapchatLogo'],
   mapping: {
-    noIcon: null,
+    Plus: <Plus />,
     DiscordLogo: <DiscordLogo weight="fill" />,
     SnapchatLogo: <SnapchatLogo weight="fill" />,
   },
   control: {
     type: 'select',
-    labels: {
-      noIcon: 'No icon',
-    },
   },
 }
 
 export default {
-  title: 'Form/Button',
-  component: Button,
+  title: 'Form/IconButton',
+  component: IconButton,
   args: {
-    children: 'Lorem ipsum',
+    icon: <Plus />,
     variant: 'primary',
     size: 'md',
-    full: false,
     disabled: false,
     loading: false,
   },
   argTypes: {
+    icon: iconArgType,
     variant: {
       options: ['primary', 'secondary', 'tertiary'],
       control: { type: 'inline-radio' },
@@ -38,35 +35,26 @@ export default {
       options: ['sm', 'md', 'lg'],
       control: { type: 'inline-radio' },
     },
-    full: { control: { type: 'boolean' } },
     disabled: { control: { type: 'boolean' } },
     loading: { control: { type: 'boolean' } },
-    leftIcon: iconArgType,
-    rightIcon: iconArgType,
   },
-} as Meta<ButtonProps>
+} as Meta<IconButtonProps>
 
-export const Primary: StoryObj<ButtonProps> = {}
+export const Primary: StoryObj<IconButtonProps> = {}
 
-export const Secondary: StoryObj<ButtonProps> = {
+export const Secondary: StoryObj<IconButtonProps> = {
   args: {
     variant: 'secondary',
   },
 }
 
-export const Tertiary: StoryObj<ButtonProps> = {
+export const Tertiary: StoryObj<IconButtonProps> = {
   args: {
     variant: 'tertiary',
   },
 }
 
-export const Full: StoryObj<ButtonProps> = {
-  args: {
-    full: true,
-  },
-}
-
-export const Loading: StoryObj<ButtonProps> = {
+export const Loading: StoryObj<IconButtonProps> = {
   args: {
     loading: true,
   },

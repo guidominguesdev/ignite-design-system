@@ -13,13 +13,18 @@ const baseColors = {
   gray900: '#121214',
   gray950: '#09090A',
 
-  nexty300: '#996DFF',
-  nexty500: '#8257E5',
-  nexty700: '#633BBC',
-  nexty900: '#271A45',
+  nexty300: '#713FFF',
+  nexty500: '#5729DA',
+  nexty700: '#3D15AC',
+  nexty900: '#270B76',
 }
 
 const aliases = {
+  'primary-light': baseColors.nexty300,
+  'primary-default': baseColors.nexty500,
+  'primary-dark': baseColors.nexty700,
+  'primary-low': baseColors.nexty900,
+
   'text-title': baseColors.gray100,
   'text-base': baseColors.gray200,
 }

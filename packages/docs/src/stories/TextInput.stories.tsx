@@ -2,15 +2,19 @@ import type { StoryObj, Meta } from '@storybook/react'
 import { Box, Text, TextInput, TextInputProps } from '@nexty-ui/react'
 
 export default {
-  title: 'Form/Text Input',
+  title: 'Form/TextInput',
   component: TextInput,
-  args: {},
   decorators: [
     (Story) => {
       return (
         <Box
           as="label"
-          css={{ display: 'flex', flexDirection: 'column', gap: '$2' }}
+          css={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '$2',
+            width: '$80',
+          }}
         >
           <Text size="sm">Email address</Text>
           {Story()}

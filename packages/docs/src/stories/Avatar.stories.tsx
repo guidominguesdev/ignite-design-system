@@ -1,12 +1,12 @@
 import type { StoryObj, Meta } from '@storybook/react'
-import { Avatar, AvatarProps } from '@nexty-ui/react'
+import { Box, Avatar, AvatarProps } from '@nexty-ui/react'
 
 export default {
   title: 'Data display/Avatar',
   component: Avatar,
   args: {
-    src: 'https://github.com/diego3g.png',
-    alt: 'Diego Fernandes',
+    src: 'https://github.com/guidominguesdev.png',
+    alt: 'Gui Domingues',
   },
   argTypes: {
     src: {
@@ -15,6 +15,25 @@ export default {
       },
     },
   },
+  decorators: [
+    (Story) => {
+      return (
+        <Box
+          as="label"
+          css={{
+            all: 'unset',
+            width: '$80',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          {Story()}
+        </Box>
+      )
+    },
+  ],
 } as Meta<AvatarProps>
 
 export const Primary: StoryObj<AvatarProps> = {}

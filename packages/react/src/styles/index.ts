@@ -8,6 +8,7 @@ import {
   opacity,
   radii,
   space,
+  transitions,
 } from '@nexty-ui/tokens'
 import { createStitches, defaultThemeMap } from '@stitches/react'
 
@@ -38,5 +39,6 @@ export const {
     opacity,
     radii,
     space,
+    transitions,
   },
 })
