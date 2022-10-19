@@ -1,0 +1,2 @@
+import{S as n}from"./index.452f6a2a.js";import"./jsx-runtime.13646ad2.js";import"./iframe.5177b385.js";import"./index.9fa0352d.js";const t={title:"Feedback/Spinner",component:n,args:{size:"md"},argTypes:{size:{options:["sm","md","lg","xl"],control:{type:"inline-radio"}}}},p={},s=["Spinner"];export{p as Spinner,s as __namedExportsOrder,t as default};
+//# sourceMappingURL=Spinner.stories.adb222ac.js.map

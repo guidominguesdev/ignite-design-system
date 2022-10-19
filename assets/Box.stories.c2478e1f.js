@@ -1,0 +1,2 @@
+var s=Object.defineProperty;var o=(t,r)=>s(t,"name",{value:r,configurable:!0});import{B as e}from"./index.452f6a2a.js";import{j as n}from"./jsx-runtime.13646ad2.js";import"./index.9fa0352d.js";import"./iframe.5177b385.js";const a=o(()=>n(e,{css:{width:"$80",height:"$80",backgroundColor:"$gray700"}}),"BoxCSS"),B={title:"Layout/Box",component:a,parameters:{controls:{hideNoControlsWarning:!0}}},d={},l=["Box"];export{d as Box,l as __namedExportsOrder,B as default};
+//# sourceMappingURL=Box.stories.c2478e1f.js.map
